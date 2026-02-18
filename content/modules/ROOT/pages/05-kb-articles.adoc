@@ -1,0 +1,50 @@
+:imagesdir: ../assets/images
+
+== KB articles support
+
+Command line assistant has the ability to return answers that make use
+of a Retrieval Augmented Generation database that provides Red Hat
+Enterprise Linux-specific knowledge.
+
+For example, let’s try asking command line assistant the following
+question.
+
+[source,bash,run]
+----
+c "what is simple content access"
+----
+
+Simple Content Access (SCA) is a simplified subscription model and
+command line assistant can return the full definition and links to
+additional documentation.
+
+.Simple Content Access (SCA)
+image::sca.png[../assets/sca]
+
+On the topic of subscriptions, let’s ask command line assistant how to
+use `+subscription-manager+`.
+
+[source,bash,run]
+----
+c "what is subscription-manager"
+----
+
+As you can see we are provided a summary on how to use
+`+subscription-manager+`.
+
+.Subscription manager
+image::subscription_manager.png[../assets/subscription_manager]
+
+Ansible core is included with a RHEL subscription. Ask command line
+assistant what it is.
+
+[source,bash,run]
+----
+c "what is ansible-core"
+----
+
+.Ansible core
+image::ansible_core.png[../assets/ansible_core]
+
+That concludes this lab. Thank you for taking the time to learn more
+about command line assistant.

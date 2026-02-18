@@ -4,6 +4,6 @@ version: master
 
 asciidoc:
   attributes:
-    lab_name: "Command Line Assistant"
+    lab_name: "Solve problems with command line assistant"
     release-version: master
     page-pagination: true

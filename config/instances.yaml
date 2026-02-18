@@ -1,11 +1,13 @@
 ---
 virtualmachines:
   - name: "rhel"
-    image: "hel-10-1-11-13-25"
-    bootloader: efi
+    image: "rhel-10-0-07-09-25-3"
     memory: "4G"
+    bootloader: efi
     cores: 1
     image_size: "40G"
+    packages:
+      - command-line-assistant
     tags:
       - key: "AnsibleGroup"
         value: "bastions"
