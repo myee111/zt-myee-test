@@ -1,0 +1,9 @@
+---
+name: modules
+version: master
+
+asciidoc:
+  attributes:
+    lab_name: "Command Line Assistant"
+    release-version: master
+    page-pagination: true
