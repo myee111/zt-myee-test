@@ -4,6 +4,6 @@ version: master
 
 asciidoc:
   attributes:
-    lab_name: "Solve problems with command line assistant"
+    lab_name: "Red Hat Satellite Basics 6.18"
     release-version: master
     page-pagination: true

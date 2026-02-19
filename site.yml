@@ -1,8 +1,8 @@
 ---
 site:
-  title: "Solve problems with command line assistant"
+  title: "Red Hat Satellite Basics 6.18"
   url: https://github.com/rhpds/showroom_template_zero
-  start_page: modules::01-timezone.adoc
+  start_page: modules::01-introduction.adoc
 
 content:
   sources:
