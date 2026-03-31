@@ -2,10 +2,6 @@
 
 echo "starting setup-rhel2.sh" >> /tmp/setup-scripts/setup-rhel2.log
 
-curl -fsSL -o install-satellite-lab.sh https://raw.githubusercontent.com/myee111/bash-scripting/main/install-satellite-lab.sh
-chmod +x install-satellite-lab.sh
-sudo ./install-satellite-lab.sh
-
 echo "LITELLM_API_KEY: $LITELLM_API_KEY" >> /tmp/setup-scripts/setup-rhel2.log
 echo $LITELLM_API_KEY >> /tmp/LITELLM_API_KEY
 
