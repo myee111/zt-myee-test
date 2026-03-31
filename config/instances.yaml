@@ -1,7 +1,7 @@
 ---
 litemaas:
   models:
-    - gpt-oss-120b
+    - minimax-m2
   duration: 1d
   enable_user_info_messages: true
   enable_user_info_data: true
