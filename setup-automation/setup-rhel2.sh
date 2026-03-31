@@ -52,6 +52,7 @@ cat > /root/.local/share/opencode/auth.json << EOF
 EOF
 
 # Wait for satellite.lab to be reachable before requesting a token (timeout after 30s).
+SATELLITE_UP=false
 SECONDS=0
 until ssh satellite.lab 'echo ok' &>/dev/null; do
   if (( SECONDS >= 30 )); then
@@ -60,11 +61,13 @@ until ssh satellite.lab 'echo ok' &>/dev/null; do
   fi
   echo "Waiting for satellite.lab to come up..." >> /tmp/setup-scripts/setup-rhel2.log
   sleep 5
-done
+done && SATELLITE_UP=true
 
-# SSH to Satellite, create admin Hammer access token for MCP.
-export FOREMAN_TOKEN=$(ssh satellite.lab 'hammer user access-token create --user=admin --name="mcp server"')
+if $SATELLITE_UP; then
+  # SSH to Satellite, create admin Hammer access token for MCP.
+  export FOREMAN_TOKEN=$(ssh satellite.lab 'hammer user access-token create --user=admin --name="mcp server"')
 
-# Inject FOREMAN_TOKEN into the OpenCode config.
-sed -i "s/\"FOREMAN_TOKEN\": \"\"/\"FOREMAN_TOKEN\": \"$FOREMAN_TOKEN\"/" /root/.config/opencode/config.json
+  # Inject FOREMAN_TOKEN into the OpenCode config.
+  sed -i "s/\"FOREMAN_TOKEN\": \"\"/\"FOREMAN_TOKEN\": \"$FOREMAN_TOKEN\"/" /root/.config/opencode/config.json
+fi
 
