@@ -1,4 +1,11 @@
 ---
+litemaas:
+  models:
+    - gpt-oss-120b
+  duration: 1d
+  enable_user_info_messages: true
+  enable_user_info_data: true
+
 virtualmachines:
   - name: "satellite"
     image: "satellite-server-rhdp-1-6-18-10-11-25"
