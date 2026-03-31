@@ -1,13 +1,17 @@
 #!/bin/bash
 
-echo "starting setup-rhel2.sh" >> /tmp/runtime-scripts/setup-rhel2.log
+echo "starting setup-rhel2.sh" >> /tmp/setup-scripts/setup-rhel2.log
 
-echo "LITELLM_API_KEY: $LITELLM_API_KEY" >> /tmp/runtime-scripts/setup-rhel2.log
+curl -fsSL -o install-satellite-lab.sh https://raw.githubusercontent.com/myee111/bash-scripting/main/install-satellite-lab.sh
+chmod +x install-satellite-lab.sh
+sudo ./install-satellite-lab.sh
+
+echo "LITELLM_API_KEY: $LITELLM_API_KEY" >> /tmp/setup-scripts/setup-rhel2.log
 echo $LITELLM_API_KEY >> /tmp/LITELLM_API_KEY
 
 
-cd /tmp
-git clone https://github.com/block/goose.git
+# cd /tmp
+# git clone https://github.com/block/goose.git
 # cd goose
 # echo "Building Goose..." >> /tmp/runtime-scripts/setup-rhel3.log
 # go build -o goose cmd/goose/main.go
