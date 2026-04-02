@@ -1,0 +1,9 @@
+:imagesdir: ../assets/images
+
+== Satellite AI Integration
+
+Red Hat Satellite can integrate with AI-powered tools to enhance
+infrastructure management. In this module, we'll explore how Satellite
+AI integration can help streamline operations, provide intelligent
+recommendations, and improve decision-making for system administrators.
+

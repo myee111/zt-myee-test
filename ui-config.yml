@@ -42,7 +42,10 @@ antora:
     - name: "13-filter-software"
       label: "Filter Software"
       solveButton: false
-    - name: "14-conclusion"
+    - name: "14-satellite-ai-integration"
+      label: "Satellite AI Integration"
+      solveButton: false
+    - name: "15-conclusion"
       label: "Conclusion"
       solveButton: false
 
