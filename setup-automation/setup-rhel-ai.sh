@@ -52,8 +52,7 @@ cat > /root/.local/share/opencode/auth.json << EOF
 EOF
 
 # SSH to Satellite, create admin Hammer access token for MCP.
-FOREMAN_TOKEN=$(ssh satellite.lab 'hammer user access-token create --user=admin --name="mcp server token"')
-echo "$FOREMAN_TOKEN" > /tmp/FOREMAN_TOKEN
+echo $(ssh satellite.lab 'hammer user access-token create --user=admin --name="mcp server token"') > /tmp/FOREMAN_TOKEN
 
 # Inject FOREMAN_TOKEN into the OpenCode config.
 sed -i "s/\"FOREMAN_TOKEN\": \"\"/\"FOREMAN_TOKEN\": \"$(cat /tmp/FOREMAN_TOKEN)\"/" /root/.config/opencode/config.json
